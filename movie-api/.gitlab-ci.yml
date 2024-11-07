@@ -1,0 +1,22 @@
+image: node:20
+
+stages:
+    - build
+
+variables:
+    NODE_ENV: test
+
+cache:
+    paths:
+        - node_modules/
+
+build:
+    stage: build
+    script:
+        - yarn install # Instalar dependências
+        - yarn build # Usar npx para chamar o TypeScript Compiler via package.json
+    artifacts:
+        paths:
+            - dist/
+    only:
+        - branches
