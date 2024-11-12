@@ -10,7 +10,8 @@
         "lint": "eslint . --ext .ts",
         "format": "prettier --write .",
         "migrate": "npx prisma migrate dev --name init",
-        "generate": "npx prisma generate"
+        "generate": "npx prisma generate",
+        "seed": "npx prisma db seed"
     },
     "keywords": [],
     "author": "",
@@ -46,5 +47,8 @@
         "morgan": "^1.10.0",
         "multer": "^1.4.5-lts.1",
         "prisma": "^5.21.1"
+    },
+    "prisma": {
+        "seed": "ts-node prisma/seed.ts"
     }
 }
